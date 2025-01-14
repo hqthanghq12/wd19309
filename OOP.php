@@ -68,23 +68,97 @@
 // Kế thừa: Cho phép xây dựng các lớp mới dựa trên cơ sở của lớp đã tồn tại (Lớp cha). 
 // Lớp mới (lớp con) sẽ được kế thừa 1 hoặc toàn bộ thuôc tính và phương thức của lớp cha.
 // Ví dụ:
-class Animal{
-    private $name;
-    protected $color;
-    public $size;
-    public function eat(){
-        echo $this->name." is eating";
-    }
-}
-class Dog extends Animal{
-    const PI = 3.14;
-    public $leg;
-    public function eatDog(){
-        echo $this->eat(). $this->color;
-    }
+// class Animal{
+//     private $name;
+//     protected $color;
+//     public $size;
+//     public function eat(){
+//         echo $this->name." is eating";
+//     }
+// }
+// class Dog extends Animal{
+//     const PI = 3.14;
+//     public $leg;
+//     public function eatDog(){
+//         echo $this->eat(). $this->color;
+//     }
 
-}
+// }
 // Hằng trong OOP (Constant)
 // Truy xuât hằng: Tên lớp::tên hằng
-echo Dog::PI;
+// echo Dog::PI;
+// Đa hình (Polymorphism): interface không phải là class
+// Vì thế chúng cũng không có thuộc tinh và phương thức
+// Interface: Là một khuôn mẫu chứa các phương thức 
+// mà các lớp khác phải triển khai
+// Ví dụ:
+interface DiChuyen{
+    public function diChuyen();
+}
+class ConNguoi implements DiChuyen{
+    public function diChuyen(){
+        echo "Con người đang đi bộ";
+    }
+}
+class OTo implements DiChuyen{
+    public function diChuyen(){
+        echo "Ô tô đang chạy";
+    }
+}
+// interface và abstract đều là bản thiết kế của dự án phần mềm
+// interface là bản thiết kết cho các class có chung hành động (Phương thức) 
+// nhưng không bản chất
+// abstract là bản thiết kế cho các class có chung đặc điểm về bản chất
+// interface có khả năng mở rộng lơn hơn
+// Trừu tượng
+// Ví dụ: 
+ abstract class Animal{
+    abstract public function eat();
+    abstract public function diChuyen();
+ }
+class Dog extends Animal{
+        public function eat(){
+            echo "Dog is eating";
+        }
+        public function diChuyen(){
+            echo "Dog is running";
+        }
+}
+    class Cat extends Animal{
+        public function eat(){
+            echo "Cat is eating";
+        }
+        public function diChuyen(){
+            echo "Cat is running";
+        }
+    }
+// Trait: 
+// Trong php chỉ có đơn kế thừa
+// Trait giúp giải quyết vấn đề này
+// Trait là một tập hợp các phương thức có thể được sử dụng trong các class
+// Ví dụ
+trait TongHieu{
+    public function tinhTong($a, $b){
+        return $a + $b;
+    }
+    private function tinhHieu($a, $b){
+        return $a - $b;
+    }
+}
+trait TichThuong{
+    protected function tinhTich($a, $b){
+        return $a * $b;
+    }
+    public function tinhThuong($a, $b){
+        return $a / $b;
+    }
+}
+class TinhToan{
+    use TongHieu, TichThuong; 
+    public function tinhTongHieuTichThuong($a, $b){
+        return $this->tinhTong($a, $b) + $this->tinhHieu($a, $b) 
+        +$this->tinhTich($a , $b);
+    }
+}
+$tt = new TinhToan();
 ?>
