@@ -1,14 +1,17 @@
-<?php 
+<?php
+namespace App\Models; 
+use PDO;
+use PDOException;
 // Nhận thấy bất cứ class nào trong model đều cần kết đến CSDL
 // Và đều cần thực hiện 1 số thao tác hoặc truy vấn CSDL vậy nên 
 // Cần 1 class chung tạo các tài nguyên để dễ thực trong quá trình làm
 class  Model{
     // Thuộc tính 
     // Cấu hình kết nối cơ sơ dữ liệu
-    private $host = 'localhost'; // Địa chỉ IP của máy chủ CSDL
-    private $dbname = 'wd19309'; // Tên CSDL
-    private $username = 'root'; // Tên đăng nhập mysql
-    private $password = ''; // Mật khẩu đăng nhập mysql
+    // private $host = 'localhost'; // Địa chỉ IP của máy chủ CSDL
+    // private $dbname = 'wd19309'; // Tên CSDL
+    // private $username = 'root'; // Tên đăng nhập mysql
+    // private $password = ''; // Mật khẩu đăng nhập mysql
     // Xử lý
     private $pdo; // Đối tượng PDO để kết nối
     private $sql; // Câu lệnh SQL hiện tại
@@ -23,10 +26,10 @@ class  Model{
     // Phương thức kết nối
     private function getConnection(){
         try{
-            $connection = new PDO("mysql:host={$this->host};
-            dbname={$this->dbname}",
-            $this->username, 
-            $this->password, [
+            $connection = new PDO("mysql:host={$_ENV['DB_HOST']};
+            dbname={$_ENV['DB_NAME']}",
+            $_ENV['DB_USER'], 
+            $_ENV['DB_PASSWORD'], [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"
             ]);
