@@ -2,6 +2,7 @@
 namespace App\Models; 
 use PDO;
 use PDOException;
+use Exception;
 // Nhận thấy bất cứ class nào trong model đều cần kết đến CSDL
 // Và đều cần thực hiện 1 số thao tác hoặc truy vấn CSDL vậy nên 
 // Cần 1 class chung tạo các tài nguyên để dễ thực trong quá trình làm

@@ -4,13 +4,15 @@
 // $conection->getConnection();
 // include 'app/Models/Model.php';
 
-include 'vendor/autoload.php';
+include __DIR__.'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/');
 $dotenv->load();
 // include 'app/Models/Product.php';
-use App\Models\Product;
-$pro = new Product();
-
+// use App\Models\Product;
+// $pro = new Product();
+use App\Controllers\CategroyController;
+$cate = new  CategroyController();
+$cate->index();
 // var_dump($pro->getAllProducts());
 // var_dump($pro->getIdProduct(1));
 // $pro->addProduct(null, 'Test1', 1000, 'Test 1 add');
@@ -18,7 +20,7 @@ $pro = new Product();
 // $pro->updateProduct(1, 'Test123', 1000, 'Test 123 update');
 // var_dump($pro->getAllProducts());
 // $pro->deleteProduct(1);
-var_dump($pro->getAllProducts());
+// var_dump($pro->getAllProducts());
 // $conection = new Model();
 // $sql = "SELECT * FROM products ";
 // $conection->setSQL($sql);
