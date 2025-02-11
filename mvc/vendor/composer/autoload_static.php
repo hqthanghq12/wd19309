@@ -68,6 +68,16 @@ class ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'B' => 
+        array (
+            'Bramus' => 
+            array (
+                0 => __DIR__ . '/..' . '/bramus/router/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -82,6 +92,7 @@ class ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df::$classMap;
 
         }, null, ClassLoader::class);

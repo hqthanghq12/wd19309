@@ -5,14 +5,15 @@
 // include 'app/Models/Model.php';
 
 include __DIR__.'/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+include_once __DIR__.'/routes/web.php';
 // include 'app/Models/Product.php';
 // use App\Models\Product;
 // $pro = new Product();
-use App\Controllers\CategroyController;
-$cate = new  CategroyController();
-$cate->index();
+// use App\Controllers\CategroyController;
+// $cate = new  CategroyController();
+// $cate->index();
 // var_dump($pro->getAllProducts());
 // var_dump($pro->getIdProduct(1));
 // $pro->addProduct(null, 'Test1', 1000, 'Test 1 add');
