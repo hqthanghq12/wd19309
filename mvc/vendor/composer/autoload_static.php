@@ -13,6 +13,10 @@ class ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df
     );
 
     public static $prefixLengthsPsr4 = array (
+        'e' => 
+        array (
+            'eftec\\bladeone\\' => 15,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -38,6 +42,10 @@ class ComposerStaticInit58638dcf7f32694d4f5e7b7bf2ca45df
     );
 
     public static $prefixDirsPsr4 = array (
+        'eftec\\bladeone\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eftec/bladeone/lib',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',

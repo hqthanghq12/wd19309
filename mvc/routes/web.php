@@ -22,6 +22,6 @@ $router->mount('/admin', function () use ($router){
 // $router->phương thức('tên router', 'namespace/tenclass@phương thức');
 $router->get('categori-list', 'App\Controllers\CategroyController@index');
 // Truyền id
-$router->get('categori-list/{id}', 'App\Controllers\CategroyController@index');
+// $router->get('categori-list/{id}', 'App\Controllers\CategroyController@index');
 $router->run();
 ?>
