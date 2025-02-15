@@ -1,5 +1,6 @@
 <?php 
 use Bramus\Router\Router;
+use App\Controllers\ProductController;
 $router = new Router();
 // Viết router
 // get = Hiển thị
@@ -23,5 +24,6 @@ $router->mount('/admin', function () use ($router){
 $router->get('categori-list', 'App\Controllers\CategroyController@index');
 // Truyền id
 // $router->get('categori-list/{id}', 'App\Controllers\CategroyController@index');
+$router->get('product-list', ProductController::class.'@index');
 $router->run();
 ?>

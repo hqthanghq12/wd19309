@@ -50,16 +50,16 @@ class Product extends Model{
     }
     // Thao tác với CSDL 
     // Thêm
-    public function addProduct($id, $tenSP, $gia, $moTa){
-        $sql = "INSERT INTO {$this->table} VALUES (?,?,?,?)";
+    public function addProduct($id, $tenSP, $gia, $hinh_anh, $moTa){
+        $sql = "INSERT INTO {$this->table} VALUES (?,?,?,?,?)";
         $this->conection->setSQL($sql);
-        return $this->conection->execute([$id, $tenSP, $gia, $moTa]);
+        return $this->conection->execute([$id, $tenSP, $gia, $hinh_anh, $moTa]);
     }
     // Sửa
-    public function updateProduct($id, $tenSP, $gia, $moTa){
+    public function updateProduct($id, $tenSP, $gia, $hinh_anh, $moTa){
         $sql = "UPDATE {$this->table} SET ten_san_pham = ?, gia = ?, mo_ta = ? WHERE id = ?";
         $this->conection->setSQL($sql);
-        return $this->conection->execute([$tenSP, $gia, $moTa, $id]);
+        return $this->conection->execute([$tenSP, $gia, $hinh_anh, $moTa, $id]);
     }
     // Xóa
     public function deleteProduct($id){

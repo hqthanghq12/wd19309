@@ -1,0 +1,26 @@
+r<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('title', 'Danh sách sản phẩm'); ?>
+<?php $this->startSection(); ?>
+ <h1></h1>
+ <table>
+ <tr>
+ <th>STT</th>
+ <th>Tên sản phẩm</th>
+ <th>Giá</th>
+ <th>Hình ảnh</th>
+ <th>Mô tả</th>
+ <th>Thao tác</th>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td>
+ <a href="">Sửa</a>
+ <a href="">Xóa</a>
+ </tr>
+ </table>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout_admin'); } ?>
