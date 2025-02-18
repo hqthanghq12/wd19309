@@ -12,5 +12,12 @@ class ProductController extends Controller{
         return $this->view('product.list', 
         compact('title', 'dataPro'));
     }
+    // Thêm
+    // Hiển thị form thêm
+    public function create(){
+        $title = 'Thêm sản phẩm'; 
+        return $this->view('product.add', 
+        compact('title'));
+    }
 }
 ?>

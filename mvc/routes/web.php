@@ -25,5 +25,6 @@ $router->get('categori-list', 'App\Controllers\CategroyController@index');
 // Truyền id
 // $router->get('categori-list/{id}', 'App\Controllers\CategroyController@index');
 $router->get('product-list', ProductController::class.'@index');
+$router->get('product-add', ProductController::class.'@create');
 $router->run();
 ?>
