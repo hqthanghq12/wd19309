@@ -3,7 +3,7 @@
 // $conection = new Product();
 // $conection->getConnection();
 // include 'app/Models/Model.php';
-
+session_start();
 include __DIR__.'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();

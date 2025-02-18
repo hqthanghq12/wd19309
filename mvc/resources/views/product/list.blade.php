@@ -2,7 +2,7 @@
 @section('title', $title)
 @section('content')
     <h1>{{$title}}</h1>
-    <a href="http://localhost/wd19309/mvc/product-add">Thêm sản phẩm</a>
+    <a href="{{route('product-add')}}">Thêm sản phẩm</a>
     <table>
         <tr>
             <th>STT</th>

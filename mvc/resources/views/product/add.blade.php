@@ -2,10 +2,22 @@
 @section('title', $title)
 @section('content')
     <h1>{{$title}}</h1>
-    <form method="post" action="" enctype="multipart/form-data">
+    @if(isset($_SESSION['errors']) && isset($_GET['msg']))
+        <div>
+            <ul>
+                @foreach ($_SESSION['errors'] as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (isset($_SESSION['success']) && isset($_GET['msg']))
+        <div>{{$_SESSION['success']}}</div>
+    @endif
+    <form method="post" action="{{route('product-store')}}" enctype="multipart/form-data">
         <div>
             <label for="ten_san_pham">Tên sản phẩm</label>
-            <input type="text" name="ten_san_pham" id="ten_san_pham">
+            <input type="text" name="ten_san_pham" id="ten_san_pham" required>
         </div>
         <div>
             <label for="gia">Giá sản phẩm</label>

@@ -26,5 +26,6 @@ $router->get('categori-list', 'App\Controllers\CategroyController@index');
 // $router->get('categori-list/{id}', 'App\Controllers\CategroyController@index');
 $router->get('product-list', ProductController::class.'@index');
 $router->get('product-add', ProductController::class.'@create');
+$router->post('product-store', ProductController::class.'@store');
 $router->run();
 ?>
