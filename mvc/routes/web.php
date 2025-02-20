@@ -29,5 +29,6 @@ $router->get('product-add', ProductController::class.'@create');
 $router->post('product-store', ProductController::class.'@store');
 $router->get('product-edit/{id}', ProductController::class.'@edit');
 $router->post('product-update/{id}', ProductController::class.'@update');
+$router->get('product-delete/{id}', ProductController::class.'@delete');
 $router->run();
 ?>

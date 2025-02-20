@@ -25,7 +25,8 @@
             <td>
                 <a href="{{route('product-edit/{id}'
                 , ['id' => $valuePro->id] )}}">Sửa</a>
-                <a href="">Xóa</a>
+                <a href="{{ route('product-delete/{id}'
+                , ['id' => $valuePro->id] )}}">Xóa</a>
         </tr>
         @endforeach
     </table>

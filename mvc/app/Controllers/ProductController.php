@@ -184,5 +184,28 @@ class ProductController extends Controller{
                  }
              }
      }
+     // Xóa
+     public function delete($id){
+        $modelProduct = new Product();
+        $imageData = $modelProduct->getIdProduct($id)->hinh_anh;
+        $result = $modelProduct->deleteProduct($id);
+        $targetDir =  __DIR__."/../../storage/uploads/";
+        if($result){
+            // Xóa hình nếu có upload ảnh mới
+            if(file_exists($targetDir.$imageData)){
+               unlink($targetDir.$imageData);
+            }
+            flash('success', 
+            'Xóa sản phẩm thành công', 
+            'product-list'
+        );
+       
+        }else{
+            flash('errors', 
+            'Có lỗi xảy ra khi xóa sản phẩm', 
+            'product-list'
+        );
+        }
+     }
 }
 ?>
