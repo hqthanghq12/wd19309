@@ -57,7 +57,7 @@ class Product extends Model{
     }
     // Sửa
     public function updateProduct($id, $tenSP, $gia, $hinh_anh, $moTa){
-        $sql = "UPDATE {$this->table} SET ten_san_pham = ?, gia = ?, mo_ta = ? WHERE id = ?";
+        $sql = "UPDATE {$this->table} SET ten_san_pham = ?, gia = ?, hinh_anh = ?, mo_ta = ? WHERE id = ?";
         $this->conection->setSQL($sql);
         return $this->conection->execute([$tenSP, $gia, $hinh_anh, $moTa, $id]);
     }

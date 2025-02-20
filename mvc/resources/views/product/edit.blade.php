@@ -14,7 +14,9 @@
     @if (isset($_SESSION['success']) && isset($_GET['msg']))
         <div>{{$_SESSION['success']}}</div>
     @endif
-    <form method="post" action="{{route('product-store')}}" enctype="multipart/form-data">
+    <form method="post" 
+    action="{{route('product-update/{id}', ['id'=>$data->id])}}" 
+    enctype="multipart/form-data">
         <div>
             <label for="ten_san_pham">Tên sản phẩm</label>
             <input type="text" 

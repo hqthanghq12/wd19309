@@ -17,7 +17,10 @@
             <td>{{$valuePro->id}}</td>
             <td>{{$valuePro->ten_san_pham}}</td>
             <td>{{$valuePro->gia}}</td>
-            <td>{{$valuePro->hinh_anh}}</td>
+            <td>
+                <img src="{{storage($valuePro->hinh_anh)}}" 
+                alt="" width="100px">
+            </td>
             <td>{{$valuePro->mo_ta}}</td>
             <td>
                 <a href="{{route('product-edit/{id}'
