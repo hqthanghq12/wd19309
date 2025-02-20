@@ -20,7 +20,8 @@
             <td>{{$valuePro->hinh_anh}}</td>
             <td>{{$valuePro->mo_ta}}</td>
             <td>
-                <a href="">Sửa</a>
+                <a href="{{route('product-edit/{id}'
+                , ['id' => $valuePro->id] )}}">Sửa</a>
                 <a href="">Xóa</a>
         </tr>
         @endforeach

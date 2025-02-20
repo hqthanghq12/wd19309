@@ -17,19 +17,23 @@
     <form method="post" action="{{route('product-store')}}" enctype="multipart/form-data">
         <div>
             <label for="ten_san_pham">Tên sản phẩm</label>
-            <input type="text" name="ten_san_pham" id="ten_san_pham">
+            <input type="text" 
+            name="ten_san_pham"
+            id="ten_san_pham" 
+            value="{{$data->ten_san_pham}}">
         </div>
         <div>
             <label for="gia">Giá sản phẩm</label>
-            <input type="number" name="gia" id="gia">
+            <input type="number" name="gia" id="gia" value="{{$data->gia}}">
         </div>
         <div>
             <label for="hinh_anh">Hình ảnh sản phẩm</label>
-            <input type="file" name="hinh_anh" id="hinh_anh">
+            <input type="file" name="hinh_anh" id="hinh_anh" >
+            <img src="{{storage($data->hinh_anh)}}" alt="" width="100px">
         </div>
         <div>
             <label for="mo_ta">Mô tả sản phẩm</label>
-            <input type="text" name="mo_ta" id="mo_ta">
+            <input type="text" name="mo_ta" id="mo_ta" value="{{$data->mo_ta}}">
         </div>
         <div>
             <button type="submit">Lưu</button>
